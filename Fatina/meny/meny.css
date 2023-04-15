@@ -1,0 +1,16 @@
+
+/*Code for menu 1*/
+/*background*/
+.div1 {
+        width: 20%;
+        max-width:200px ;
+        height: 1000px;
+        min-width:100px ;
+        border: 1px solid #1E2525;
+        box-sizing: border-box;
+        background-color: #1E2525;
+        border-radius: 20px;
+}
+/*for picture*/
+.div2 {}
+
