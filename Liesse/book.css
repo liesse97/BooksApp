@@ -1,8 +1,48 @@
 *{
-    margin:0;
-    padding:0;
+margin:0;
+padding:0;
+}
+body{
+background-color: #2A3738;
+color:#fff;
+}
+main{
+width: 75%;
+margin: auto;
+
+}
+button{
+background-color: #9F723D;
+color:#fff;
+
 }
 .div1{
-flex-direction: row;
-    display: flex;
+display: flex;
+padding-bottom:25px;
+
+}
+.textBok{
+padding-left: 50px;
+}
+.infoBok{
+padding-top:20px
+}
+.rviewIntro{
+text-align: center;
+}
+.btn_bookBuy {
+padding: 8px;
+border-radius: 25px;
+width: 100%;
+}
+.text_rviewIntro{
+display: flex;
+width: 400px;
+margin: auto;
+justify-content: space-around;
+}
+.btn_rviewIntro {
+padding: 0 40px;
+border-radius: 25px;
+
 }
