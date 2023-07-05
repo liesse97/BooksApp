@@ -16,13 +16,13 @@ display: flex;
 align-items: center;
 }
 .user-icon-div{
-margin-left: auto;
 margin-right: 20px;
 }
 
 .user-icon{
-color:  rgba(255, 255, 255, 0.345); 
+color:  #fff; 
 font-size: 30px;
+margin-left: auto;
 }
 .book-icon{
 font-size: 50px;
@@ -30,15 +30,39 @@ margin: 10px;
 color: #A57333;
 }
 .text{
-color: rgba(216, 250, 215, 0.786);
+color:#fff;
        
+}
+
+.search-div{
+        margin-left: auto;
+        margin-right: 20px;
+}
+.search-input{
+ border-radius: 20px 0px 0px 20px;
+ border:none;
+ height: 28.4px; /* Adjust the height as needed */
+ width: 200px; /* Adjust the width as needed */
+ outline: none;
+}
+
+
+.search-button{
+        background-color: #A57333;
+        border-radius: 0px 20px 20px 0px;
+        border:none;
+        height: 30.25px; /* Adjust the height to match the input */
+        padding: 0 15px; /* Add padding for visual spacing */
+        color: #fff; /* Set the button text color */
 }
 
 
 .div1 {
         width: 20%;
         max-width:230px ;
-        height: 1000px;
+        /* height: 1000px; */
+        height: fit-content;
+        padding-bottom: 50px;
         min-width:170px ;
         border: 1px solid #121C20;
         box-sizing: border-box;
@@ -83,7 +107,8 @@ color: rgba(216, 250, 215, 0.786);
         padding: 15px 25px;
         color: rgba(255, 255, 255, 1);
         background-color: #A57333;
-        /* left:-20px; */
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); 
+        transform: translateX(-30px);
         transition: 0.3s ease-in-out;
        
       }
