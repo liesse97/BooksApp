@@ -1,30 +1,67 @@
 
 /*Code for menu 1*/
 /*background*/
+body{
+margin: 0;
+padding: 0;
+background-color: #1F383A;
+}
+
+
+.top-menu{
+background-color: #121C20;
+width: 100vw;
+height: 60px;
+display: flex;
+align-items: center;
+}
+.user-icon-div{
+margin-left: auto;
+margin-right: 20px;
+}
+
+.user-icon{
+color:  rgba(255, 255, 255, 0.345); 
+font-size: 30px;
+}
+.book-icon{
+font-size: 50px;
+margin: 10px;
+color: #A57333;
+}
+.text{
+color: rgba(216, 250, 215, 0.786);
+       
+}
+
+
 .div1 {
         width: 20%;
-        max-width:200px ;
+        max-width:230px ;
         height: 1000px;
-        min-width:160px ;
-        border: 1px solid #1E2525;
+        min-width:170px ;
+        border: 1px solid #121C20;
         box-sizing: border-box;
         /* background-color: #1E2525; */
         border-radius: 20px;
         background: linear-gradient(to bottom, #1F383A 30%, #121C20 70%);
-        margin-left: 100px;
+        margin-left: 60px;
+        margin-top: 60px;
+        margin-bottom: 60px;
 
 }
 /*for buttons*/
+
 .div2{
        
         width: 100%;
         /* background-color: #2b8383; */
-        margin-top: 250px;
+        margin-top: 330px;
 
 }
 .button {
         width: 100%;
-        color: rgba(255, 255, 255, 0.06);
+        color: rgba(255, 255, 255, 0.201);
        font-size: medium;
         background-color: rgba(3, 86, 67, 0.05);
         border: 2px solid #2b838316;
