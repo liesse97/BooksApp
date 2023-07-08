@@ -7,28 +7,32 @@ background-color: #2A3738;
 color:#fff;
 }
 main{
-width: 75%;
+width: 70%;
 margin: auto;
+padding-top:50px
 
 }
 button{
-background-color: #9F723D;
+background-color: #A57333;
 color:#fff;
+border-style: none;
 
 }
 .div1{
 display: flex;
-padding-bottom:25px;
+padding-bottom:50px;
 
 }
 .textBok{
 padding-left: 50px;
+padding-top:20px
 }
 .infoBok{
 padding-top:20px
 }
 .rviewIntro{
 text-align: center;
+padding-bottom: 25px;
 }
 .btn_bookBuy {
 padding: 8px;
@@ -40,9 +44,36 @@ display: flex;
 width: 400px;
 margin: auto;
 justify-content: space-around;
+    padding-top: 30px;
 }
 .btn_rviewIntro {
 padding: 0 40px;
 border-radius: 25px;
 
+}
+.Textrview{
+width:90%;
+margin:auto;
+padding-top:15px}
+
+.star {
+    cursor: pointer;
+    font-size: 24px;
+}
+
+.selected {
+    color: orange;
+}
+a{
+    color:#A57333;
+    text-decoration: none;
+}
+.fa-chevron-down{
+        color: #A57333;
+        font-size: 10px;
+
+}
+
+h1,h4{
+            color: #A57333;
 }
