@@ -57,6 +57,18 @@ color:#fff;
 }
 .menu-list-container{
         display: flex;
+       flex-direction: column;
+        margin-left: 30px;
+
+}
+.horizontal{
+        display: flex;  /* To get the 2 div elements side by side  */
+        
+}
+.vertical{
+        
+        margin-left: 50%;
+        align-items: center;
 }
 
 
@@ -88,21 +100,19 @@ color:#fff;
 }
 
 .book-list-div{
-        
-        border: 1px solid white;
-        margin-left: 10px;
-        margin-right: 0px;
+        flex:1;
+        position: relative;
+        border: 1px solid rgb(33, 225, 100);
+        margin-left: 45px;
+        margin-right: 45px;
         margin-bottom: 60px;
         margin-top: 60px;
-        flex:1;
-
-        
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(6, 1fr);
         grid-gap: 10px;
 
-        height:750px;
-        overflow-y: auto; /* Skapar en horisontell scrollbar */
+        
+        overflow-y: auto; /*Skapar en horisontell scrollbar */
         white-space: nowrap; /* Förhindrar att bilderna bryts i flera rader */
         
 }
@@ -111,9 +121,7 @@ color:#fff;
         width: 100%; /* Säkerställer att bilderna inte sträcker sig utanför förälderelementet */
 
       }
-.theme-img{
 
-}
 .img{
         border-radius:20px 20px 0 0;
         width: 100%;
@@ -158,10 +166,47 @@ color:#fff;
         color: rgba(255, 255, 255, 1);
         background-color: #A57333;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); 
-        transform: translateX(-30px);
+        transform: translateX(-20px);
         transition: 0.3s ease-in-out;
       }
+      .book-item {
+       
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); 
+        
+        border: 1px solid transparent;
+        border-radius: 15%;
+        padding: 0px;
+        margin: 5px;
+        min-height: 300px;
+        max-height: 300px;
+        max-width: 200px;
+      }
+      
+      #pagination {
+        margin-top: 10 px;
 
+      }
+      
+      
+      .page-button{
+        
+        margin:0 5px;
+        padding: 5px 10px;
+        background-color: #A57333;
+        border: none;
+        cursor: pointer;
+        border-radius: 50%;
+        font-style: normal;
+        font-size: large;
+        color: #fff;
+        
+
+  
+        
+        
+      }
+
+      
 
       
 
