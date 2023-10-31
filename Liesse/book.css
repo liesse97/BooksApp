@@ -3,7 +3,9 @@ margin:0;
 padding:0;
 }
 body{
-background-color: #2A3738;
+margin: 0;
+    padding: 0;
+    background-color: #1F383A;
 color:#fff;
 }
 main{
@@ -76,4 +78,52 @@ a{
 
 h1,h4{
             color: #A57333;
+}
+
+/*menu*/
+
+.top-menu {
+    background-color: #121C20;
+    /*width: 100vw;*/
+    height: 60px;
+    display: flex;
+    align-items: center;
+    padding-right: 5px;
+}
+.search-div {
+    margin-left: auto;
+    margin-right: 20px;
+}
+
+
+.search-input {
+    border-radius: 20px 0px 0px 20px;
+    border: none;
+    height: 29.4px;
+    width: 200px;
+    outline: none;
+}
+
+
+.search-button {
+    background-color: #A57333;
+    border-radius: 0px 20px 20px 0px;
+    border: none;
+    height: 30.25px;
+    /* Adjust the height to match the input */
+    padding: 0 15px;
+    /* Add padding for visual spacing */
+    color: #fff;
+    /* Set the button text color */
+}
+
+.book-icon {
+    font-size: 50px;
+    margin: 10px;
+    color: #A57333;
+}
+.user-icon {
+    color: #fff;
+    font-size: 30px;
+    margin-left: auto;
 }
