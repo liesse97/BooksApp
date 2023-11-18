@@ -162,17 +162,17 @@
         }
 
         if(event.target.classList.contains("change-page-plus")){
-          console.log ("cp "+cpage);
+          console.log ("current page "+cpage);
           let fpage = cpage +1;
-          console.log("fp " + fpage );
+          console.log("forward page " + fpage );
           displayBooks(fpage);
           cpage++;
 
         }
         if(event.target.classList.contains("change-page-minus")){
-          console.log ("cp "+cpage);
+          console.log ("current page "+cpage);
           let bpage = cpage -1;
-          console.log("bp " + bpage );
+          console.log("back page " + bpage );
           displayBooks(bpage);
           cpage--;
         }
