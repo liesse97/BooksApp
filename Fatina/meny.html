@@ -48,8 +48,7 @@
           <button class="button middle">Drama</button>
           <button class="button middle">sci-fi</button>
           <button class="button middle">Cyberpunk</button>
-          <button class="button middle">Romance-thriller</button>
-          <button class="button middle">Drama-cool</button>
+          <button class="button middle">Other..</button>
         </div>
       </div>
 
@@ -57,6 +56,8 @@
       <div id="book-list" class="book-list-div"></div>
     </div>
     <div class="vertical">
+      <button class="change-page-minus">Back</button>
+      <button class="change-page-plus">Forward</button>
       <div id="pagesbutton"></div>
     </div>
     </div>
@@ -129,7 +130,7 @@
           bookList.appendChild(bookItem);
         }
       }
-
+      
       // Function to create pagination buttons
       function createPagination() {
         const pagination = document.getElementById("pagesbutton");
@@ -147,13 +148,36 @@
       // Initial display
       displayBooks(1);
       createPagination();
-
+      let cpage = 1;
       // Handle page button clicks
       document.addEventListener("click", function (event) {
+        
         if (event.target.classList.contains("page-button")) {
+          
           const page = parseInt(event.target.dataset.page);
           displayBooks(page);
+          console.log(page);
+          cpage = page;
+          return cpage
         }
+
+        if(event.target.classList.contains("change-page-plus")){
+          console.log ("cp "+cpage);
+          let fpage = cpage +1;
+          console.log("fp " + fpage );
+          displayBooks(fpage);
+          cpage++;
+
+        }
+        if(event.target.classList.contains("change-page-minus")){
+          console.log ("cp "+cpage);
+          let bpage = cpage -1;
+          console.log("bp " + bpage );
+          displayBooks(bpage);
+          cpage--;
+        }
+
+      
       });
     });
   </script>
