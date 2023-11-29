@@ -35,81 +35,69 @@
     </div>
 
     <div class="menu-list-container">
-    <div class="horizontal">
-      <div class="div1">
-        <div class="theme-img">
-          <img src="/Fatina/image/fantasyimg.png" class="img" />
+      <div class="horizontal">
+        <div class="div1">
+          <div class="theme-img">
+            <img src="/Fatina/image/fantasyimg.png" class="img" />
+          </div>
+          <div class="div2">
+            <button class="button">All Books</button>
+            <button class="button middle">Fantasy</button>
+            <button class="button middle">Thriller</button>
+            <button class="button middle">Romance</button>
+            <button class="button middle">Drama</button>
+            <button class="button middle">sci-fi</button>
+            <button class="button middle">Cyberpunk</button>
+            <button class="button middle">Other..</button>
+          </div>
         </div>
-        <div class="div2">
-          <button class="button">All Books</button>
-          <button class="button middle">Fantasy</button>
-          <button class="button middle">Thriller</button>
-          <button class="button middle">Romance</button>
-          <button class="button middle">Drama</button>
-          <button class="button middle">sci-fi</button>
-          <button class="button middle">Cyberpunk</button>
-          <button class="button middle">Other..</button>
-        </div>
-      </div>
 
         <!-- Plats där bökerna och sido knapparna kommer att vara -->
-      <div id="book-list" class="book-list-div"></div>
+        <div id="book-list" class="book-list-div"></div>
+      </div>
+      <div class="vertical">
+        <div id="pagesbutton"></div>
+        <button class="change-page-minus">Back</button>
+        <button class="change-page-plus">Forward</button>
+      </div>
     </div>
-    <div class="vertical">
-      <button class="change-page-minus">Back</button>
-      <button class="change-page-plus">Forward</button>
-      <div id="pagesbutton"></div>
-    </div>
-    </div>
-
 
     <!--Hower Display-->
-
-
-
-
   </body>
-
-
-
-
-
-
 
   <script>
     document.addEventListener("DOMContentLoaded", function () {
-    //   Här ska Book listan från APIn Laddas in.
+      //   Här ska Book listan från APIn Laddas in.
       const books = [
-        { title: "Book 1", author: "Author 1", image:"fantasyimg.png"},
-        { title: "Book 2", author: "Author 2" , image:"fantasyimg.png"},
-        { title: "Book 3", author: "Author 3" , image:"fantasyimg.png"},
-        { title: "Book 4", author: "Author 4" , image:"fantasyimg.png"},
-        { title: "Book 5", author: "Author 5" , image:"fantasyimg.png"},
-        { title: "Book 6", author: "Author 6" , image:"fantasyimg.png"},
-        { title: "Book 7", author: "Author 7" , image:"fantasyimg.png"},
-        { title: "Book 8", author: "Author 8" , image:"fantasyimg.png"},
-        { title: "Book 9", author: "Author 9" , image:"fantasyimg.png"},
-        { title: "Book 10", author:"Author 10", image:"fantasyimg.png"},
-        { title: "Book 11", author:"Author 11", image:"fantasyimg.png"},
-        { title: "Book 12", author: "Author 12", image:"fantasyimg.png"},
-        { title: "Book 13", author: "Author 13" , image:"fantasyimg.png"},
-        { title: "Book 14", author: "Author 14" , image:"fantasyimg.png"},
-        { title: "Book 15", author: "Author 15" , image:"fantasyimg.png"},
-        { title: "Book 16", author: "Author 16" , image:"fantasyimg.png"},
-        { title: "Book 17", author: "Author 17" , image:"fantasyimg.png"},
-        { title: "Book 18", author: "Author 18" , image:"fantasyimg.png"},
-        { title: "Book 19", author: "Author 19" , image:"fantasyimg.png"},
-        { title: "Book 20", author: "Author 20" , image:"fantasyimg.png"},
-        { title: "Book 21", author:"Author 21", image:"fantasyimg.png"},
-        { title: "Book 22", author:"Author 22", image:"fantasyimg.png"},
-        { title: "Book 23", author: "Author 23", image:"fantasyimg.png"},
-        { title: "Book 24", author: "Author 24", image:"fantasyimg.png"},
-        { title: "Book 25", author:"Author 25", image:"fantasyimg.png"},
-        { title: "Book 26", author: "Author 26", image:"fantasyimg.png"},
-        { title: "Book 27", author: "Author 27", image:"fantasyimg.png"}
+        { title: "Book 1", author: "Author 1", image: "fantasyimg.png" },
+        { title: "Book 2", author: "Author 2", image: "fantasyimg.png" },
+        { title: "Book 3", author: "Author 3", image: "fantasyimg.png" },
+        { title: "Book 4", author: "Author 4", image: "fantasyimg.png" },
+        { title: "Book 5", author: "Author 5", image: "fantasyimg.png" },
+        { title: "Book 6", author: "Author 6", image: "fantasyimg.png" },
+        { title: "Book 7", author: "Author 7", image: "fantasyimg.png" },
+        { title: "Book 8", author: "Author 8", image: "fantasyimg.png" },
+        { title: "Book 9", author: "Author 9", image: "fantasyimg.png" },
+        { title: "Book 10", author: "Author 10", image: "fantasyimg.png" },
+        { title: "Book 11", author: "Author 11", image: "fantasyimg.png" },
+        { title: "Book 12", author: "Author 12", image: "fantasyimg.png" },
+        { title: "Book 13", author: "Author 13", image: "fantasyimg.png" },
+        { title: "Book 14", author: "Author 14", image: "fantasyimg.png" },
+        { title: "Book 15", author: "Author 15", image: "fantasyimg.png" },
+        { title: "Book 16", author: "Author 16", image: "fantasyimg.png" },
+        { title: "Book 17", author: "Author 17", image: "fantasyimg.png" },
+        { title: "Book 18", author: "Author 18", image: "fantasyimg.png" },
+        { title: "Book 19", author: "Author 19", image: "fantasyimg.png" },
+        { title: "Book 20", author: "Author 20", image: "fantasyimg.png" },
+        { title: "Book 21", author: "Author 21", image: "fantasyimg.png" },
+        { title: "Book 22", author: "Author 22", image: "fantasyimg.png" },
+        { title: "Book 23", author: "Author 23", image: "fantasyimg.png" },
+        { title: "Book 24", author: "Author 24", image: "fantasyimg.png" },
+        { title: "Book 25", author: "Author 25", image: "fantasyimg.png" },
+        { title: "Book 26", author: "Author 26", image: "fantasyimg.png" },
+        { title: "Book 27", author: "Author 27", image: "fantasyimg.png" },
       ];
 
-      
       const itemsPerPage = 12; //antalet böcker per sida
       const totalPages = Math.ceil(books.length / itemsPerPage);
 
@@ -124,24 +112,24 @@
         for (let i = startIndex; i < endIndex && i < books.length; i++) {
           const book = books[i];
           const bookItem = document.createElement("div");
-         //bookItem.classList.add("book-item");
-          bookItem.innerHTML = 
-          `<img src="${book.image}" alt="${book.title} Cover" class="book-item">`;
+          //bookItem.classList.add("book-item");
+          bookItem.innerHTML = `<img src="${book.image}" alt="${book.title} Cover" class="book-item">`;
           bookList.appendChild(bookItem);
         }
       }
-      
+
       // Function to create pagination buttons
       function createPagination() {
         const pagination = document.getElementById("pagesbutton");
         pagination.innerHTML = ""; // Clear previous pagination
- 
+
         for (let page = 1; page <= totalPages; page++) {
           const pageButton = document.createElement("button");
-          pageButton.classList.add("page-button");
+          pageButton.classList.add("page-button"); //This Adds the class "page-button onto" the pageButton element.
+          pageButton.classList.add("page" + page);
           pageButton.textContent = page;
           pageButton.dataset.page = page;
-          pagination.appendChild(pageButton);
+          pagination.appendChild(pageButton); // With appendChild  you will add pageButton to paginitation.
         }
       }
 
@@ -151,33 +139,54 @@
       let cpage = 1;
       // Handle page button clicks
       document.addEventListener("click", function (event) {
-        
         if (event.target.classList.contains("page-button")) {
-          
           const page = parseInt(event.target.dataset.page);
           displayBooks(page);
           console.log(page);
+          //page-button.classList.add("active");
           cpage = page;
-          return cpage
+
+           // ändrar färg på aktiva knappen
+          document.querySelectorAll(".page-button").forEach((button) => {
+          button.classList.remove("active");
+          });
+          document.querySelector(".page" + page).classList.add("active");
+          return cpage;
         }
 
-        if(event.target.classList.contains("change-page-plus")){
-          console.log ("current page "+cpage);
-          let fpage = cpage +1;
-          console.log("forward page " + fpage );
+        if (event.target.classList.contains("change-page-plus")) {
+          console.log("current page " + cpage);
+          let fpage = cpage + 1;
+          console.log("forward page " + fpage);
           displayBooks(fpage);
+
+          document.querySelectorAll(".page-button").forEach((button) => {
+          button.classList.remove("active");
+          });
+          document.querySelector(".page" + fpage).classList.add("active");
+        
+
           cpage++;
-
+        
         }
-        if(event.target.classList.contains("change-page-minus")){
-          console.log ("current page "+cpage);
-          let bpage = cpage -1;
-          console.log("back page " + bpage );
+
+
+
+        if (event.target.classList.contains("change-page-minus")) {
+          console.log("current page " + cpage);
+          let bpage = cpage - 1;
+          console.log("back page " + bpage);
           displayBooks(bpage);
-          cpage--;
-        }
 
-      
+
+          // ändrar färg på aktiva knappen
+          document.querySelectorAll(".page-button").forEach((button) => {
+          button.classList.remove("active");
+          });
+          document.querySelector(".page" + bpage).classList.add("active");
+        
+        cpage--;
+      }
       });
     });
   </script>
