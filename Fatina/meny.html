@@ -146,48 +146,48 @@
           console.log(page);
           //page-button.classList.add("active");
           cpage = page;
-
-           // ändrar färg på aktiva knappen
+          //Denna kod kan göras till en metod.
+          // ändrar färg på aktiva knappen
           document.querySelectorAll(".page-button").forEach((button) => {
-          button.classList.remove("active");
+            button.classList.remove("active");
           });
           document.querySelector(".page" + page).classList.add("active");
           return cpage;
         }
-
+        // Forward and back page buttons
         if (event.target.classList.contains("change-page-plus")) {
           console.log("current page " + cpage);
           let fpage = cpage + 1;
-          console.log("forward page " + fpage);
-          displayBooks(fpage);
+          if (fpage <= totalPages) {
+            console.log("forward page " + fpage);
+            displayBooks(fpage);
 
-          document.querySelectorAll(".page-button").forEach((button) => {
-          button.classList.remove("active");
-          });
-          document.querySelector(".page" + fpage).classList.add("active");
-        
+            document.querySelectorAll(".page-button").forEach((button) => {
+              button.classList.remove("active");
+            });
+            document.querySelector(".page" + fpage).classList.add("active");
 
-          cpage++;
-        
+            cpage++;
+          }
         }
-
-
 
         if (event.target.classList.contains("change-page-minus")) {
           console.log("current page " + cpage);
           let bpage = cpage - 1;
-          console.log("back page " + bpage);
-          displayBooks(bpage);
+          if (bpage >= 1) {
+            console.log("back page " + bpage);
+            displayBooks(bpage);
+            console.log("total pages" + totalPages);
 
+            // ändrar färg på aktiva knappen
+            document.querySelectorAll(".page-button").forEach((button) => {
+              button.classList.remove("active");
+            });
+            document.querySelector(".page" + bpage).classList.add("active");
 
-          // ändrar färg på aktiva knappen
-          document.querySelectorAll(".page-button").forEach((button) => {
-          button.classList.remove("active");
-          });
-          document.querySelector(".page" + bpage).classList.add("active");
-        
-        cpage--;
-      }
+            cpage--;
+          }
+        }
       });
     });
   </script>
