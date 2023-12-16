@@ -127,3 +127,20 @@ h1,h4{
     font-size: 30px;
     margin-left: auto;
 }
+
+.boxSectn{
+    border-radius: 15%;
+        /*padding: 0px;
+        margin: 5px;*/
+        min-height: 300px;
+        max-height: 300px;
+        max-width: 200px;
+}
+
+.boxSectn p{
+    width: 200px;
+text-align: center;
+margin-left: 3px;
+color: #fff;
+font-size: 13px;
+}
