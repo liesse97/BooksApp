@@ -61,8 +61,10 @@
         <button class="change-page-plus">Forward</button>
       </div>
     </div>
-
+    <!-- Målet här är att visa författare och namn detalj INFO -->
     <!--Hower Display-->
+    
+         
   </body>
 
   <script>
@@ -187,10 +189,15 @@
           const bookItem = document.createElement("div");
           //bookItem.classList.add("book-item");
 
-          bookItem.innerHTML = `
+          bookItem.innerHTML = ` <div class= book-container>
               <img src="${book.image}" alt="${book.title} Cover" class="book-item">
-              <p class="book-title">${book.title}</p>
-              <p class="book-author">Author: ${book.author}</p>`;
+              <div class="book-info-container"> 
+                
+                <p class="bookt">${(book.title)}</p>
+                <p class="booka">${(book.author)}</p>
+              
+              </div> 
+              </div>`;
           bookList.appendChild(bookItem);
         }
       }
