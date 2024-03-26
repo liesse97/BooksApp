@@ -71,9 +71,9 @@
     document.addEventListener("DOMContentLoaded", function () {
       //API
       const apiUrl =
-        "https://www.googleapis.com/books/v1/volumes?q=romance:keyes&key=AIzaSyB8d14nV9lif1OHMhgDG5eYB8SxjtGIqKI";
+        "https://www.googleapis.com/books/v1/volumes?q=marvel&maxResults=40&key=AIzaSyB8d14nV9lif1OHMhgDG5eYB8SxjtGIqKI";
       const books = [];
-      const itemsPerPage = 5; //antalet böcker per sida
+      const itemsPerPage = 10; //antalet böcker per sida
       let totalPages;
 
       fetch(apiUrl)
