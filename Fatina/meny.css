@@ -225,7 +225,13 @@ color:#fff;
         opacity: 0.9;
         background: #A57333;
         overflow-wrap: break-word;
+        display: none;
       }
+      
+      .book-container:hover .book-info-container{
+        display: block;
+}
+
       .bookt{
         font-style: italic;
         padding-left:10px;
