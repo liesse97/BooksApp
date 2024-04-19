@@ -36,8 +36,9 @@ function displayBooks(books) {
             >
             <p>${books.volumeInfo.title}</p>
         `;
+        bookList.appendChild(bookItem);
 
-
+        
 }
 
 
