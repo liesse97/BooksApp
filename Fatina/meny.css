@@ -106,12 +106,12 @@ color:#fff;
         margin-right: 45px;
         margin-top: 60px;
         display: grid;
-        grid-template-columns: repeat(6, 1fr);
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
         grid-gap: 10px;
 
         
-        overflow-y: auto; /*Skapar en horisontell scrollbar */
-        white-space: nowrap; /* Förhindrar att bilderna bryts i flera rader */
+        /* overflow-y: scroll; /*Skapar en horisontell scrollbar */
+      /*  white-space: nowrap; Förhindrar att bilderna bryts i flera rader */
         
 }
 .book-list img {
