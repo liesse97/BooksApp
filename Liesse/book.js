@@ -1,76 +1,48 @@
 document.addEventListener('DOMContentLoaded', () => {
 const apiKey = 'AIzaSyB8d14nV9lif1OHMhgDG5eYB8SxjtGIqKI';
-    const query = 'Harry Potter';
+const query = 'Harry Potter';
 
-  fetch(`https://www.googleapis.com/books/v1/volumes?q=*&orderBy=relevance&maxResults=5&key=${apiKey}`)
-    .then(response => response.json())
-    .then(data => {
-        // Process the data
-      if (data.items && data.items.length > 0) {
-              data.items.forEach(book => {
-                const books = book.volumeInfo;
-                displayBooks(books);
-              });
-            } else {
-        console.error('No book found for the given query.');
-        }
-    })
-    .catch(error => console.error('Error fetching data:', error));
+fetch(`https://www.googleapis.com/books/v1/volumes?q=*&orderBy=relevance&maxResults=5&key=${apiKey}`)
+.then(response => response.json())
+.then(data => {
+// Process the data
+if (data.items && data.items.length > 0) {
+    data.items.forEach(book => {
+    const books = book;
+    displayBooks(books);
+    });
 
-    /*function displayBookInfo(book) {
-    const titleElement = document.getElementById('book-title');
-    const authorElement = document.getElementById('author');
-    const descriptionElement = document.getElementById('description');
-    const imageElement = document.getElementById('book-image');
+}
+})
+.catch(error => console.error('Error fetching data:', error));
 
-    const title = book.title || 'Title not available';
-    const authors = book.authors ? book.authors.join(', ') : 'Unknown Author';
-    const description = book.description || 'Description not available';
-    const imageUrl = book.imageLinks ? book.imageLinks.thumbnail : '';
+ function handleBookImageClick() {
+     // console.log(clickedElement)
+        let information = clickedElement.getAttribute("data-info");
 
-    titleElement.innerText = title;
-    authorElement.innerText = `Author: ${authors}`;
-    descriptionElement.innerText = `Description: ${description}`;
-    imageElement.src = imageUrl;
-    }*/
-});
+        console.log('Clicked on book:', information);
+        // For example, you can open a new page with more details or perform other actions
+      }
 
-
-   // document.addEventListener("DOMContentLoaded", function () {
-        //   Här ska Book listan från APIn Laddas in.
-      const testbook = [
-                { title: "Book 1", author: "Author 1", image: "/Fatina/fantasyimg.png" },
-                { title: "Book 2", author: "Author 2", image: "/Fatina/fantasyimg.png" },
-                { title: "Book 3", author: "Author 3", image: "/Fatina/fantasyimg.png" },
-                { title: "Book 4", author: "Author 4", image: "/Fatina/fantasyimg.png" },
-                { title: "Book 5", author: "Author 5", image: "/Fatina/fantasyimg.png" },
-            ];
-
-            // Function to display books for a specific page
-            function displayBooks(books) {
-                const bookList = document.getElementById("book-list");
-                //const titleList = document.getElementById("titel-list");
-
-
-                //bookList.innerHTML = ""; // Clear previous content
-
-//books.forEach(book => {   
-    console.log(books.title)                
-   //const book = books[i];
-                    const bookItem = document.createElement("div");
-
-                    bookItem.classList.add("boxSectn");
-                    bookItem.innerHTML = `
-            <img src="${books.imageLinks.thumbnail}" alt="${books.title} Cover" class="book-item">
-            <p>${books.title}</p>
+function displayBooks(books) {
+    const bookList = document.getElementById("book-list");
+        const bookItem = document.createElement("div");
+        bookItem.classList.add("boxSectn");
+      bookItem.innerHTML = `
+            <img src="${books.volumeInfo.imageLinks.thumbnail}"
+                 alt="${books.volumeInfo.title} Cover"
+                 class="bookBox"
+                 onclick="handleBookImageClick(this)"
+            >
+            <p>${books.volumeInfo.title}</p>
         `;
-                    bookList.appendChild(bookItem);
-                    //bookList.appendChild(titleList);
-
-                    
-                    
-               // })
-            }
 
 
-            displayBooks()
+}
+
+
+// onclick="location.href='http://127.0.0.1:5500/Liesse/book.html';"
+
+    
+
+    });

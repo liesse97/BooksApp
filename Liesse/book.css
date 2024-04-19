@@ -4,8 +4,8 @@ padding:0;
 }
 body{
 margin: 0;
-    padding: 0;
-    background-color: #1F383A;
+padding: 0;
+background-color: #1F383A;
 color:#fff;
 }
 main{
@@ -46,7 +46,7 @@ display: flex;
 width: 400px;
 margin: auto;
 justify-content: space-around;
-    padding-top: 30px;
+padding-top: 30px;
 }
 .btn_rviewIntro {
 padding: 0 40px;
@@ -59,88 +59,99 @@ margin:auto;
 padding-top:15px}
 
 .star {
-    cursor: pointer;
-    font-size: 24px;
+cursor: pointer;
+font-size: 24px;
 }
 
 .selected {
-    color: orange;
+color: orange;
 }
 a{
-    color:#A57333;
-    text-decoration: none;
+color:#A57333;
+text-decoration: none;
 }
 .fa-chevron-down{
-        color: #A57333;
-        font-size: 10px;
+    color: #A57333;
+    font-size: 10px;
 
 }
 
 h1,h4{
-            color: #A57333;
+        color: #A57333;
 }
 
 /*menu*/
 
 .top-menu {
-    background-color: #121C20;
-    /*width: 100vw;*/
-    height: 60px;
-    display: flex;
-    align-items: center;
-    padding-right: 5px;
+background-color: #121C20;
+/*width: 100vw;*/
+height: 60px;
+display: flex;
+align-items: center;
+padding-right: 5px;
 }
 .search-div {
-    margin-left: auto;
-    margin-right: 20px;
+margin-left: auto;
+margin-right: 20px;
 }
 
 
 .search-input {
-    border-radius: 20px 0px 0px 20px;
-    border: none;
-    height: 29.4px;
-    width: 200px;
-    outline: none;
+border-radius: 20px 0px 0px 20px;
+border: none;
+height: 29.4px;
+width: 200px;
+outline: none;
 }
 
 
 .search-button {
-    background-color: #A57333;
-    border-radius: 0px 20px 20px 0px;
-    border: none;
-    height: 30.25px;
-    /* Adjust the height to match the input */
-    padding: 0 15px;
-    /* Add padding for visual spacing */
-    color: #fff;
-    /* Set the button text color */
+background-color: #A57333;
+border-radius: 0px 20px 20px 0px;
+border: none;
+height: 30.25px;
+/* Adjust the height to match the input */
+padding: 0 15px;
+/* Add padding for visual spacing */
+color: #fff;
+/* Set the button text color */
 }
 
 .book-icon {
-    font-size: 50px;
-    margin: 10px;
-    color: #A57333;
+font-size: 50px;
+margin: 10px;
+color: #A57333;
 }
 .user-icon {
-    color: #fff;
-    font-size: 30px;
-    margin-left: auto;
+color: #fff;
+font-size: 30px;
+margin-left: auto;
 }
 
 .boxSectn{
-    border-radius: 15%;
-        /*padding: 0px;
-        margin: 5px;*/
-        min-height: 300px;
-        max-height: 300px;
-        max-width: 200px;
+border-radius: 15%;
+    /*padding: 0px;
+    margin: 5px;*/
+    min-height: 300px;
+    max-height: 300px;
+    max-width: 200px;
 }
 
 .boxSectn p{
-    width: 200px;
+width: 200px;
 text-align: center;
 margin-left: 3px;
 color: #fff;
 font-size: 13px;
+}
+
+#bookBox {
+width: 100%;
+height: 100%;
+top: 0px;
+left: 0;
+right: 0;
+/* position: absolute;*/
+box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+border-radius: 15%;
 }
