@@ -68,7 +68,9 @@
   </body>
 
   <script>
+   
     document.addEventListener("DOMContentLoaded", function () {
+      
       //API
       const apiUrl =
         "https://www.googleapis.com/books/v1/volumes?q=marvel&maxResults=40&key=AIzaSyB8d14nV9lif1OHMhgDG5eYB8SxjtGIqKI";
@@ -89,13 +91,16 @@
             const title = book.volumeInfo?.title;
             const image = book.volumeInfo?.imageLinks?.thumbnail;
             const author = book.volumeInfo?.authors?.join(", ");
-            if (title && image && author) {
+            const bookId = book.id;
+            if (title && image && author && bookId ) {
               //if (title ){
               books.push({
                 title: title,
                 image: image,
                 author: author,
+                bookId: bookId,
               });
+              let bookId1 = new String( bookId);
             }
           });
           totalPages = Math.ceil(books.length / itemsPerPage);
@@ -158,7 +163,7 @@
         .catch((error) => {
           console.error("Fetch error:", error);
         });
-
+        
       // Function to create pagination buttons
       function createPagination() {
         const pagination = document.getElementById("pagesbutton");
@@ -174,33 +179,49 @@
         }
         document.querySelector(".page1").classList.add("active");
       }
-
+     
       // Function to display books for a specific page
+     
       function displayBooks(page) {
+        let bookid;
         const startIndex = (page - 1) * itemsPerPage;
         const endIndex = startIndex + itemsPerPage;
 
         const bookList = document.getElementById("book-list");
         bookList.innerHTML = ""; // Clear previous content
-
+        
         for (let i = startIndex; i < endIndex && i < books.length; i++) {
           const book = books[i];
           console.log("book " + books[i]);
           const bookItem = document.createElement("div");
           //bookItem.classList.add("book-item");
-
-          bookItem.innerHTML = ` <div class= book-container>
-              <img src="${book.image}" alt="${book.title} Cover" class="book-item">
-              <div class="book-info-container"> 
+         
+          bookItem.innerHTML = `<div class="book-container" onclick="bookIdFunction(${(book.bookId)})">
+         
+            <img src="${book.image}" alt="${book.title} Cover" class="book-item">
+              <div class="book-info-container" > 
                 
                 <p class="bookt">${(book.title)}</p>
                 <p class="booka">${(book.author)}</p>
-              
+                <p class="booka">${(book.bookId)}</p>
+               
               </div> 
               </div>`;
+            bookid = book.bookId;
           bookList.appendChild(bookItem);
+         
         }
+        console.log(bookid);
+       return bookid;
+  
       }
+      
     });
+    function bookIdFunction(bookid){
+      const myJSON = JSON.stringify(bookid);
+      console.log(myJSON +" bokid2");}
+
   </script>
 </html>
+<!-- function bookIdFunction(a){
+  console.log("hello");}; -->
