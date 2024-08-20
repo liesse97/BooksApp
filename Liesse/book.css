@@ -38,8 +38,15 @@ padding-bottom: 25px;
 }
 .btn_bookBuy {
 padding: 8px;
+margin-top: 17px;
+cursor: pointer;
 border-radius: 25px;
 width: 100%;
+}
+.boxSectn img{
+cursor: pointer;
+width: 195px;
+height: 280px;
 }
 .text_rviewIntro{
 display: flex;
@@ -71,13 +78,13 @@ color:#A57333;
 text-decoration: none;
 }
 .fa-chevron-down{
-    color: #A57333;
-    font-size: 10px;
+color: #A57333;
+font-size: 10px;
 
 }
 
 h1,h4{
-        color: #A57333;
+color: #A57333;
 }
 
 /*menu*/
@@ -130,11 +137,10 @@ margin-left: auto;
 
 .boxSectn{
 border-radius: 15%;
-    /*padding: 0px;
-    margin: 5px;*/
-    min-height: 300px;
-    max-height: 300px;
-    max-width: 200px;
+/*padding: 0px;
+margin: 5px;*/
+margin-bottom:20px;
+margin-left: 25px;
 }
 
 .boxSectn p{

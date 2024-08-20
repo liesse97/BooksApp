@@ -1,9 +1,12 @@
 const apiKey = 'AIzaSyB8d14nV9lif1OHMhgDG5eYB8SxjtGIqKI';
 const query = 'Harry Potter';
+const searchForm = document.querySelector(".search-div");
+const bookInput = document.querySelector(".search-input");
 const bookList = document.getElementById("book-list");
 const bookInfo = document.querySelector(".bookInfo");
 const urlParams = new URLSearchParams(window.location.search);
 const bookID = urlParams.get('id');
+console.log(bookID)
 if (bookID) {
 getSingleBookInfo(bookID);
 }
@@ -11,16 +14,34 @@ getSingleBookInfo(bookID);
 
 //const booksData = await getBooks();
 //async function booksForm() {}
+searchForm.addEventListener("submit",async event => {
+    //Prevent default refresh page
+    event.preventDefault();
+    // Access to the book in the input.
+    const book = bookInput.value;
+    if(book){
+        const bookData = await getBooks(book);
+                //location.href = `http://127.0.0.1:5500/Liesse/searchPage.html`;
+
+        displayBooksInfo(bookData)
 
 
-async function getBooks () {
-const apiUrl = `https://www.googleapis.com/books/v1/volumes?q=*&orderBy=relevance&maxResults=5&key=${apiKey}`;
+    } else{
+        //h1 : Pleade Enter Book
+    }
+})
+
+async function getBooks (book) {
+//const apiUrl = `https://www.googleapis.com/books/v1/volumes?q=*&orderBy=relevance&maxResults=5&key=${apiKey}`;
+const apiUrl = `https://www.googleapis.com/books/v1/volumes?q=${book}`;
 const response =  await fetch(apiUrl);
 if (!response.ok) {
 throw new Error(`Error: ${response.status}`);
 }
-const books = await response.json();
-displayBooksInfo(books.items)
+const booksData = await response.json();
+
+return booksData.items
+
 }
 
 
@@ -29,6 +50,7 @@ data.forEach((book) => {
 //let bookID= book.id;
 const bookItem = document.createElement("div");
 bookItem.classList.add("boxSectn");
+bookItem.textContent ="";
 bookItem.innerHTML = `
 <img src="${book.volumeInfo.imageLinks.thumbnail}"
 alt="${book.volumeInfo.title} Cover"
@@ -53,21 +75,23 @@ if (!response.ok) {
 throw new Error(`Error: ${response.status}`);
 }
 const singleBook = await response.json();
-//await new Promise(resolve => setTimeout(resolve, 1000));
 displaySingleBookInfo (singleBook.volumeInfo)
 };
 
 function displaySingleBookInfo(singleBook){
 const bookInfoItem = document.createElement("div");
+//have array so need to map
 const categoriesHTML = singleBook.categories.map(categorie => `${categorie}`).join('<br>');
-const authorsHTML = singleBook.authors.map(author => `${author}`).join(',');
+const authorsHTML = singleBook.authors.map(author => `${author}`).join(', ');
 
 console.log(singleBook)
 bookInfoItem.innerHTML = `
 <section class="div1">
 <div>
-<img src=${singleBook.imageLinks.small} alt="" width="" height="350px">
-<button class="btn_bookBuy" >Buy on Amazon</button>
+<img src=${singleBook.imageLinks.thumbnail} alt="" width="" height="300px">
+<a href=${singleBook.canonicalVolumeLink} target="_blank">
+<button class="btn_bookBuy">Buy on Google Play</button>
+</a>
 </div>
 <div class="textBok">
 <h1>${singleBook.title}</h1>
@@ -86,7 +110,7 @@ bookInfoItem.innerHTML = `
 ${categoriesHTML}
 </p>
 <p><strong>This edition</strong><br>
-Format: ${singleBook.pageCount} pages, ${singleBook.printType}<br>
+Pages: ${singleBook.pageCount} pages<br>
 Published: ${singleBook.publishedDate} by ${singleBook.publisher} <br>
 Language: ${singleBook.language}<br>
 
@@ -149,5 +173,5 @@ bookInfo.appendChild(bookInfoItem);
 }
 
 
-getBooks();
+//getBooks();
 
