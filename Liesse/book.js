@@ -7,7 +7,8 @@ const bookInfo = document.querySelector(".bookInfo");
 
 const urlParams = new URLSearchParams(window.location.search);
 const bookID = urlParams.get('id');
-console.log(bookID)
+const bookName = urlParams.get('name');
+
 if (bookID) {
 getSingleBookInfo(bookID);
 }
@@ -21,19 +22,19 @@ event.preventDefault();
 // Access to the book in the input.
 const book = bookInput.value;
 if(book){
-    //location.href = `http://127.0.0.1:5500/Liesse/searchPage.html?id=${book}`;
-    const bookData = await getBooks(book);
-            console.log(bookData)
+location.href = `http://127.0.0.1:5500/Liesse/searchPage.html?name=${book}`;
 
-    displayBooksInfo(bookData)
+// const bookData = await getBooks(bookName);
+//displayBooksInfo(bookData)
 
 
 } else{
-    //h1 : Pleade Enter Book
+//h1 : Pleade Enter Book
 }
 })
 
 async function getBooks (book) {
+
 //const apiUrl = `https://www.googleapis.com/books/v1/volumes?q=*&orderBy=relevance&maxResults=5&key=${apiKey}`;
 const apiUrl = `https://www.googleapis.com/books/v1/volumes?q=${book}`;
 const response =  await fetch(apiUrl);
@@ -42,10 +43,11 @@ throw new Error(`Error: ${response.status}`);
 }
 const booksData = await response.json();
 
-return booksData.items
+//return booksData.items
+displayBooksInfo(booksData.items)
 
 }
-
+getBooks(bookName)
 
 function displayBooksInfo (data) {
 //clear booklist befre adding new list
