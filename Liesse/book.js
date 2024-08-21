@@ -4,9 +4,11 @@ const searchForm = document.querySelector(".search-div");
 const bookInput = document.querySelector(".search-input");
 const bookList = document.getElementById("book-list");
 const bookInfo = document.querySelector(".bookInfo");
+
 const urlParams = new URLSearchParams(window.location.search);
 const bookID = urlParams.get('id');
-console.log(bookID)
+const bookName = urlParams.get('name');
+
 if (bookID) {
 getSingleBookInfo(bookID);
 }
@@ -15,23 +17,24 @@ getSingleBookInfo(bookID);
 //const booksData = await getBooks();
 //async function booksForm() {}
 searchForm.addEventListener("submit",async event => {
-    //Prevent default refresh page
-    event.preventDefault();
-    // Access to the book in the input.
-    const book = bookInput.value;
-    if(book){
-        const bookData = await getBooks(book);
-                //location.href = `http://127.0.0.1:5500/Liesse/searchPage.html`;
+//Prevent default refresh page
+event.preventDefault();
+// Access to the book in the input.
+const book = bookInput.value;
+if(book){
+location.href = `http://127.0.0.1:5500/Liesse/searchPage.html?name=${book}`;
 
-        displayBooksInfo(bookData)
+// const bookData = await getBooks(bookName);
+//displayBooksInfo(bookData)
 
 
-    } else{
-        //h1 : Pleade Enter Book
-    }
+} else{
+//h1 : Pleade Enter Book
+}
 })
 
 async function getBooks (book) {
+
 //const apiUrl = `https://www.googleapis.com/books/v1/volumes?q=*&orderBy=relevance&maxResults=5&key=${apiKey}`;
 const apiUrl = `https://www.googleapis.com/books/v1/volumes?q=${book}`;
 const response =  await fetch(apiUrl);
@@ -40,17 +43,21 @@ throw new Error(`Error: ${response.status}`);
 }
 const booksData = await response.json();
 
-return booksData.items
+//return booksData.items
+displayBooksInfo(booksData.items)
 
 }
-
+getBooks(bookName)
 
 function displayBooksInfo (data) {
+//clear booklist befre adding new list
+const bookList = document.querySelector("#book-list");
+bookList.innerHTML ="";
+
 data.forEach((book) => {
 //let bookID= book.id;
 const bookItem = document.createElement("div");
 bookItem.classList.add("boxSectn");
-bookItem.textContent ="";
 bookItem.innerHTML = `
 <img src="${book.volumeInfo.imageLinks.thumbnail}"
 alt="${book.volumeInfo.title} Cover"
@@ -69,7 +76,7 @@ location.href=`http://127.0.0.1:5500/Liesse/book.html?id=${book.id}`;
 
 
 async function getSingleBookInfo (bookID){
-const apiUrl = `https://www.googleapis.com/books/v1/volumes/${bookID}??key=${apiKey}`;
+const apiUrl = `https://www.googleapis.com/books/v1/volumes/${bookID}?key=${apiKey}`;
 const response =  await fetch(apiUrl);
 if (!response.ok) {
 throw new Error(`Error: ${response.status}`);
