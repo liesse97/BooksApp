@@ -36,13 +36,13 @@ location.href = `http://127.0.0.1:5500/Liesse/searchPage.html?name=${book}`;
 async function getBooks (book) {
 
 //const apiUrl = `https://www.googleapis.com/books/v1/volumes?q=*&orderBy=relevance&maxResults=5&key=${apiKey}`;
-const apiUrl = `https://www.googleapis.com/books/v1/volumes?q=${book}`;
+const apiUrl = `https://www.googleapis.com/books/v1/volumes?q=${book}&key=${apiKey}`;
 const response =  await fetch(apiUrl);
 if (!response.ok) {
 throw new Error(`Error: ${response.status}`);
 }
 const booksData = await response.json();
-
+console.log(booksData)
 //return booksData.items
 displayBooksInfo(booksData.items)
 
