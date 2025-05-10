@@ -169,9 +169,10 @@ return fetch(apiUrl)})
     }
     
   }
-  window.getbookId = function(bookid) {//assigns to a global window making it globle access
+  getbookId = function(bookid) {//assigns to a global window making it globle access
     console.log(bookid);
-    window.location.href = "newPage.html";
+    getSingleBookInfo (bookid);
+    //window.location.href = "newPage.html";
     // Need code that change to a liesses webpage.
   }
 
