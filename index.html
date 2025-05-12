@@ -1,11 +1,93 @@
-<html lang="en">
+<!DOCTYPE html>
+<html>
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/fbff331600.js" crossorigin="anonymous"></script>
+
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./Fatina/meny.css" />
+    <link rel="stylesheet" href="style.css" />
+
+
     <title>Document</title>
 </head>
+
 <body>
-    <h1>Hej</h1>
+    <!--
+    <div class="top-menu">
+      <span class="book-app-icon"
+        ><i class="fa-solid fa-book-open book-icon"></i
+      ></span>
+      <span class="text fa-solid">The<br />Book<br />App</span>
+
+      <div class="search-div">
+        <form>
+          <input type="text" class="search-input" /><button
+            class="search-button"
+          >
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </button>
+        </form>
+      </div>
+
+      <span class="user-icon-div"
+        ><i class="fa-regular fa-circle-user user-icon"></i
+      ></span>
+    </div>
+-->
+    <div class="top-menu">
+        <span class="book-app-icon"><i class="fa-solid fa-book-open book-icon"></i></span>
+        <span class="text fa-solid">The<br />Book<br />App</span>
+
+        <!--<div >-->
+        <form class="search-div">
+            <input type="text" class="search-input" placeholder="Enter Book">
+            <button class="search-button" type="submit"><i class="fa-solid fa-magnifying-glass"></i>
+            </button>
+        </form>
+        <!--</div>-->
+
+        <span class="user-icon-div"><i class="fa-regular fa-circle-user user-icon"></i></span>
+    </div>
+
+    <div class="menu-list-container">
+        <div class="horizontal">
+            <div class="div1">
+                <div class="theme-img">
+                    <img src="/Fatina/image/fantasyimg.png" class="img" />
+                </div>
+                <div class="div2">
+                    <button class="button middle category " id="all" data-string="all">All Books</button>
+                    <button class="button middle category" id="fantasy" data-string="fantasy">Fantasy</button>
+                    <button class="button middle category" id="thriller" data-string="thriller">Thriller</button>
+                    <button class="button middle category" id="romance" data-string="romance">Romance</button>
+                    <button class="button middle category" id="drama" data-string="drama">Drama</button>
+                    <button class="button middle category" id="sci-fi" data-string="sci-fi">Sci-Fi</button>
+                    <button class="button middle category" id="Cyberpunk" data-string="cyberpunk">Cyberpunk</button>
+                    <button class="button middle category" id="" data-string="">Other..</button>
+                </div>
+            </div>
+
+            <!-- Plats där bökerna och sido knapparna kommer att vara -->
+            <div id="book-list" class="book-list-div"></div>
+        </div>
+        <div class="vertical">
+            <div id="pagesbutton"></div>
+            <button class="change-page-minus">Back</button>
+            <button class="change-page-plus">Forward</button>
+        </div>
+    </div>
+    <!-- Målet här är att visa författare och namn detalj INFO -->
+    <!--Hower Display-->
+
+    <script src="./Fatina/meny.js"></script>
+    <script src="./Liesse/book.js"></script>
+
 </body>
+
+
 </html>
+<!-- function bookIdFunction(a){
+  console.log("hello");}; -->

@@ -43,10 +43,16 @@ cursor: pointer;
 border-radius: 25px;
 width: 100%;
 }
-.boxSectn img{
-cursor: pointer;
-width: 195px;
-height: 280px;
+.boxSectn img {
+    border-radius: 15%;
+    width: 180px;
+    height: 250px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+}
+
+.boxSectn img:hover {
+    transform: scale(1.13);
 }
 .text_rviewIntro{
 display: flex;
@@ -150,6 +156,8 @@ margin-left: 3px;
 color: #fff;
 font-size: 13px;
 }
+
+
 
 #bookBox {
 width: 100%;

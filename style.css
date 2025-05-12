@@ -1,0 +1,11 @@
+.boxSectn img {
+    border-radius: 15%;
+    width: 180px;
+    height: 250px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+   }
+
+    .boxSectn img:hover {
+            transform: scale(1.13);
+           }
